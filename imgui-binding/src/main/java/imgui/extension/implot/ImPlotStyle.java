@@ -487,12 +487,14 @@ public final class ImPlotStyle extends ImGuiStruct {
         IMPLOT_STYLE->Colormap = input;
      */
 
+    /*
+    Gone?
     //Antialiasing
-    public native boolean isAntiAliasedLines(); /*
+    public native boolean isAntiAliasedLines(); *//*
         return IMPLOT_STYLE->AntiAliasedLines;
-    */
+    *//*
 
-    public native void setAntiAliasedLines(boolean input); /*
+    public native void setAntiAliasedLines(boolean input); *//*
         IMPLOT_STYLE->AntiAliasedLines = input;
      */
 
