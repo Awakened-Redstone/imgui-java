@@ -3,16 +3,16 @@ package imgui.extension.implot;
 import imgui.ImVec2;
 import imgui.binding.ImGuiStructDestroyable;
 
-public final class ImPlotLimits extends ImGuiStructDestroyable {
-    public ImPlotLimits(final long ptr) {
+public final class ImPlotRect extends ImGuiStructDestroyable {
+    public ImPlotRect(final long ptr) {
         super(ptr);
     }
 
-    public ImPlotLimits() {
+    public ImPlotRect() {
         this(0, 0, 0, 0);
     }
 
-    public ImPlotLimits(final double xMin, final double xMax, final double yMin, final double yMax) {
+    public ImPlotRect(final double xMin, final double xMax, final double yMin, final double yMax) {
         this(0);
         ptr = create(xMin, xMax, yMin, yMax);
     }
@@ -21,16 +21,16 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
         #include "_common.h"
         #include "_implot.h"
 
-        #define IMPLOT_LIMITS ((ImPlotLimits*)STRUCT_PTR)
+        #define IMPLOT_RECT ((ImPlotRect*)STRUCT_PTR)
      */
 
     @Override
     protected native long create(); /*
-        return (intptr_t)(new ImPlotLimits(0, 0, 0, 0));
+        return (intptr_t)(new ImPlotRect(0, 0, 0, 0));
     */
 
     protected native long create(double xMin, double xMax, double yMin, double yMax); /*
-        return (intptr_t)(new ImPlotLimits(xMin, xMax, yMin, yMax));
+        return (intptr_t)(new ImPlotRect(xMin, xMax, yMin, yMax));
     */
 
     public boolean contains(final ImPlotPoint plotPoint) {
@@ -38,7 +38,7 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
     }
 
     public native boolean contains(double x, double y); /*
-        return IMPLOT_LIMITS->Contains(x, y);
+        return IMPLOT_RECT->Contains(x, y);
     */
 
     /**
@@ -59,7 +59,7 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
     }
 
     private native long nMin(); /*
-        ImPlotPoint* p = new ImPlotPoint(IMPLOT_LIMITS->Min());
+        ImPlotPoint* p = new ImPlotPoint(IMPLOT_RECT->Min());
         return (intptr_t)p;
     */
 
@@ -81,7 +81,7 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
     }
 
     private native long nMax(); /*
-        ImPlotPoint* p = new ImPlotPoint(IMPLOT_LIMITS->Max());
+        ImPlotPoint* p = new ImPlotPoint(IMPLOT_RECT->Max());
         return (intptr_t)p;
     */
 
@@ -90,7 +90,7 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
     }
 
     private native long nGetX(long ptr); /*
-        return (intptr_t)&(IMPLOT_LIMITS->X);
+        return (intptr_t)&(IMPLOT_RECT->X);
     */
 
     public ImPlotRange getY() {
@@ -98,7 +98,7 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
     }
 
     private native long nGetY(long ptr); /*
-        return (intptr_t)&(IMPLOT_LIMITS->Y);
+        return (intptr_t)&(IMPLOT_RECT->Y);
      */
 
     public void setX(final ImPlotRange value) {
@@ -106,7 +106,7 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
     }
 
     private native void nSetX(long valueptr); /*
-        IMPLOT_LIMITS->X = *((ImPlotRange*)valueptr);
+        IMPLOT_RECT->X = *((ImPlotRange*)valueptr);
      */
 
     public void setY(final ImPlotRange value) {
@@ -114,6 +114,6 @@ public final class ImPlotLimits extends ImGuiStructDestroyable {
     }
 
     private native void nSetY(long valueptr); /*
-        IMPLOT_LIMITS->Y = *((ImPlotRange*)valueptr);
+        IMPLOT_RECT->Y = *((ImPlotRange*)valueptr);
      */
 }
