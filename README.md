@@ -47,7 +47,7 @@ You can support the project to motivate its further development.
 
 _**Make sure you have installed <u>JDK 8</u> or higher.**_
 
-<p align="center"><img src="https://i.imgur.com/JjhR9in.png"/></p>
+<p align="center"><img src="https://i.imgur.com/JjhR9in.png" /></p>
 
 ### [Demo](https://i.imgur.com/c0ds1EZ.gif)
 
