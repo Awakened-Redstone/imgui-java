@@ -1,6 +1,9 @@
 package imgui.extension.implot.flag;
 
-public class ImPlotColormapScale {
+public final class ImPlotColormapScale {
+    private ImPlotColormapScale() {
+    }
+
     /** default */
     public static final int None = 0;
     /** the colormap axis label will not be displayed */

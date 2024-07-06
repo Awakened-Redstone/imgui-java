@@ -3,7 +3,6 @@ package imgui.extension.implot;
 import imgui.ImDrawList;
 import imgui.ImVec2;
 import imgui.ImVec4;
-import imgui.extension.implot.flag.ImPlotDragTool;
 import imgui.flag.ImGuiCond;
 import imgui.flag.ImGuiMouseButton;
 import imgui.type.ImBoolean;
@@ -31,7 +30,7 @@ public final class ImPlot {
     // ImPlot Context
     //-----------------------------------------------------------------------------
 
-    public static void setupAxes(String xLabel, String yLabel) {
+    public static void setupAxes(final String xLabel, final String yLabel) {
         nSetupAxes(xLabel, yLabel, 0, 0);
     }
 
@@ -769,7 +768,7 @@ public final class ImPlot {
         plotText(text, x, y, new ImVec2(0, 0), vertical);
     }
 
-    public static void plotText(final String text, final double x, final double y, ImVec2 offset, final boolean vertical) {
+    public static void plotText(final String text, final double x, final double y, final ImVec2 offset, final boolean vertical) {
         nPlotText(text, x, y, offset.x, offset.y, vertical ? 1 << 10 : 0);
     }
 
@@ -1036,7 +1035,7 @@ public final class ImPlot {
      * This function MUST be called BETWEEN begin/endPlot!
      * Returns true if the current plot is being queried or has an active query. Query must be enabled with ImPlotFlags_Query.
      */
-    public static boolean dragRect(int nId, double xMin, double yMin, double xMax, double yMax, ImVec4 col, int flags) {
+    public static boolean dragRect(final int nId, final double xMin, final double yMin, final double xMax, final double yMax, final ImVec4 col, final int flags) {
         return nDragRect(nId, xMin, yMin, xMax, yMax, col.w, col.x, col.y, col.z, flags);
     }
     public static native boolean nDragRect(int nId, double xMin, double yMin, double xMax, double yMax, float colA, float colB, float colC, float colD, int flags); /*
@@ -1068,7 +1067,7 @@ public final class ImPlot {
                   fmt.length > 4 ? fmt[4] : null);
     }
 
-    private static native void nAnnotation(double x, double y, float pixX, float pixY, float colA, float colB, float colC, float colD, final boolean clamped, String a, String b, String c, String d, String e); /*
+    private static native void nAnnotation(double x, double y, float pixX, float pixY, float colA, float colB, float colC, float colD, boolean clamped, String a, String b, String c, String d, String e); /*
         ImVec2 pixOffset(pixX, pixY);
         ImVec4 col(colA, colB, colC, colD);
 

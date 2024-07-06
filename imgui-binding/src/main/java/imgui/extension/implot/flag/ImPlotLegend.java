@@ -1,6 +1,9 @@
 package imgui.extension.implot.flag;
 
-public class ImPlotLegend {
+public final class ImPlotLegend {
+    private ImPlotLegend() {
+    }
+
     /** default */
     public static final int None = 0;
     /** legend icons will not function as hide/show buttons */

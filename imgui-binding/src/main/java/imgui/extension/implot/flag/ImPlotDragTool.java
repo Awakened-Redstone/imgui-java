@@ -1,6 +1,9 @@
 package imgui.extension.implot.flag;
 
-public class ImPlotDragTool {
+public final class ImPlotDragTool {
+    private ImPlotDragTool() {
+    }
+
     /** default */
     public static final int None = 0;
     /** drag tools won't change cursor icons when hovered or held */

@@ -1,6 +1,9 @@
 package imgui.extension.implot;
 
-public class ImPlotAxis {
+public final class ImPlotAxis {
+    private ImPlotAxis() {
+    }
+
     // horizontal axes
     /** enabled by default */
     public static final int X1 = 0;
