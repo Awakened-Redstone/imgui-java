@@ -10,7 +10,7 @@ public final class ImPlotLegend {
     public static final int NoButtons = 1;
     /** plot items will not be highlighted when their legend entry is hovered */
     public static final int NoHighlightItem = 1 << 1;
-    /** axes will not be highlighted when legend entries are hovered (only relevant if x/y-axis count > 1) */
+    /** axes will not be highlighted when legend entries are hovered (only relevant if x/y-axis count &gt; 1) */
     public static final int NoHighlightAxis = 1 << 2;
     /** the user will not be able to open context menus with right-click */
     public static final int NoMenus = 1 << 3;
